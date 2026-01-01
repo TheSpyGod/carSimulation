@@ -1,0 +1,10 @@
+include
+car
+*.exe
+start
+*.zip
+*.tar.gz
+*.h.gch
+test.cpp
+korczyk_gabriel_car/
+
