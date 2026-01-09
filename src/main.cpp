@@ -1,19 +1,6 @@
-#include "car_module.h"
-
-class Porsche {
- 
-    public:
-    Car car;
-
-    void update() {
-
-        while (true) {
-            car.tick();
-        }
-    }
-};
-
+#include "car.h"
 int main() {
+    Car car;
     initscr();
     keypad(stdscr, TRUE);
     cbreak();
