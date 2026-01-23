@@ -15,5 +15,5 @@ public:
     bool getEngineState() const;
     void turnOnEngine();
     void turnOffEngine();
-    double getEngineForce(double throttle, double gearRatio, double finalDrive, int rpm);
+    double getEngineForce(double throttle, double gearRatio, double finalDrive, int rpm, double tireDiameter);
 };

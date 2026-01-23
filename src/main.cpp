@@ -8,9 +8,10 @@ int main() {
     nodelay(stdscr, TRUE);
 
     /*Main Loop*/
-    Porsche ps;
-    ps.update();
-    
+    for (;;) {
+        car.tick();
+    }
+
     endwin();   
     return 0;
 }

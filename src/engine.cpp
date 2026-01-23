@@ -28,7 +28,7 @@ bool Engine::getEngineState() const {
     return engineState;
 }
 
-double Engine::getEngineForce(double throttle, double gearRatio, double finaldrive, int rpm) {
+double Engine::getEngineForce(double throttle, double gearRatio, double finaldrive, int rpm, double tireDiameter) {
         if (!engineState || throttle <= 0 || gearRatio == 0) return 0.0;
 
         double torque;
@@ -37,7 +37,9 @@ double Engine::getEngineForce(double throttle, double gearRatio, double finaldri
         else if (rpm < 5500) torque = 650;
         else torque = 400;
 
-        return throttle * torque * gearRatio * finaldrive;
+        double wheelRadius = tireDiameter / 2.0;
+
+        return throttle * torque * gearRatio * finaldrive / wheelRadius;
 }
 
 void Engine::turnOffEngine() {

@@ -12,7 +12,10 @@
 #include "transmission.h"
 #include "physics.h"
 #include "shiftpolicy.h"
-
+#include "environment.h"
+#include "surfacemodel.h"
+#include <set>
+#include <fstream>
 class Car {
 private: 
 
@@ -23,6 +26,11 @@ private:
     Transmission trans;
     Physics p;
     ShiftPolicy policy;
+    Environment env;
+
+    bool paused = false;
+    bool reset = false;
+    bool captureFrame = false;
 
     double v, a, t, pos = 0;
     bool gasPressed, brakePressed, useAutoTransmission = false;
